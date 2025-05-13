@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snake Game - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans flex flex-col items-center min-h-screen py-6">
+
+  <h1 class="text-3xl font-bold mb-2">🐍 Snake Game</h1>
+  <p class="mb-4">Pontos: <span id="score" class="font-mono">0</span></p>
+
+  <button onclick="startGame()" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded mb-4 shadow">
+    ▶️ Iniciar Jogo
+  </button>
+
+  <div id="game-container" class="w-full max-w-sm aspect-square bg-gray-800 rounded-xl shadow-lg p-1">
+    <div id="messageBox" class="text-center text-red-400 font-bold text-xl mb-2"></div>
+
+    <canvas id="gameCanvas" class="w-full h-full rounded-lg"></canvas>
+  </div>
+
+  <!-- Controles Mobile -->
+  <div id="controls" class="mt-6 space-y-2 md:hidden">
+    <div class="flex justify-center space-x-4">
+      <button onclick="setDirection('up')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">⬆️</button>
+    </div>
+    <div class="flex justify-center space-x-4">
+      <button onclick="setDirection('left')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">⬅️</button>
+      <button onclick="setDirection('right')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">➡️</button>
+    </div>
+    <div class="flex justify-center space-x-4">
+      <button onclick="setDirection('down')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">⬇️</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

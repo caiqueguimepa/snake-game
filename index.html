@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,18 +21,34 @@
     <canvas id="gameCanvas" class="w-full h-full rounded-lg"></canvas>
   </div>
 
-  <!-- Controles Mobile -->
-  <div id="controls" class="mt-6 space-y-2 md:hidden">
-    <div class="flex justify-center space-x-4">
-      <button onclick="setDirection('up')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">⬆️</button>
+  <!-- Controles Mobile melhorados -->
+  <div id="controls" class="mt-6 w-full max-w-sm md:hidden">
+    <div class="grid grid-cols-3 gap-2">
+      <div class="col-start-2 flex justify-center">
+        <button ontouchstart="setDirection('up')" onclick="setDirection('up')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow w-16 h-16 flex items-center justify-center">⬆️</button>
+      </div>
+      <div class="col-start-1 flex justify-center">
+        <button ontouchstart="setDirection('left')" onclick="setDirection('left')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow w-16 h-16 flex items-center justify-center">⬅️</button>
+      </div>
+      <div class="col-start-3 flex justify-center">
+        <button ontouchstart="setDirection('right')" onclick="setDirection('right')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow w-16 h-16 flex items-center justify-center">➡️</button>
+      </div>
+      <div class="col-start-2 flex justify-center">
+        <button ontouchstart="setDirection('down')" onclick="setDirection('down')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow w-16 h-16 flex items-center justify-center">⬇️</button>
+      </div>
     </div>
-    <div class="flex justify-center space-x-4">
-      <button onclick="setDirection('left')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">⬅️</button>
-      <button onclick="setDirection('right')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">➡️</button>
-    </div>
-    <div class="flex justify-center space-x-4">
-      <button onclick="setDirection('down')" class="bg-green-600 hover:bg-green-700 p-4 rounded-full text-2xl shadow">⬇️</button>
-    </div>
+  </div>
+
+  <!-- Ranking -->
+  <div id="ranking-container" class="mt-8 w-full max-w-sm bg-gray-800 rounded-xl p-4">
+    <h2 class="text-xl font-bold mb-2 text-center">🏆 Melhores Pontuações</h2>
+    <ol id="ranking-list" class="list-decimal list-inside font-mono">
+      <li class="py-1">-</li>
+      <li class="py-1">-</li>
+      <li class="py-1">-</li>
+      <li class="py-1">-</li>
+      <li class="py-1">-</li>
+    </ol>
   </div>
 
   <script src="script.js"></script>
